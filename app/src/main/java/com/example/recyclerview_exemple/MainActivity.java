@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ConstraintLayout coordinatorLayout;
     RecyclerView rvContacts;
     Button btn_addContact;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Initialize contacts
         contacts = Contact.createContactsList(20);
         // Create adapter passing in the sample user data
-        adapter = new ContactsAdapter(contacts);
+        adapter = new ContactsAdapter(contacts,this);
         // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(adapter);
         // Set layout manager to position the items
